@@ -429,7 +429,10 @@ public class RNOneSignal extends ReactContextBaseJavaModule implements Lifecycle
 
    @ReactMethod
    public void addTriggers(ReadableMap triggers) {
-      OneSignal.addTriggers(triggers.toHashMap());
+      //OneSignal.addTriggers(triggers.toHashMap());
+
+      //patch by bayu
+      OneSignal.addTriggers(MapUtil.toMap(triggers));
    }
 
    @ReactMethod

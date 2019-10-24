@@ -163,7 +163,10 @@ public class RNUtils {
 
     public static Collection<String> convertReableArrayIntoStringCollection(ReadableArray readableArray) {
         ArrayList<String> strings = new ArrayList<>();
-        for (Object object : readableArray.toArrayList()) {
+        //for (Object object : readableArray.toArrayList()) {
+        
+        //patch by bayu
+        for (Object object : ArrayUtil.toArray(readableArray)) {
             if (object instanceof String)
                 strings.add((String) object);
         }
